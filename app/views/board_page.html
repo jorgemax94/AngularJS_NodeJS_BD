@@ -1,0 +1,90 @@
+<div id="board-page" >
+    <div  class="list">
+        <span class="list-name" ng-model="nameList">LISTA TO DO</span>
+        <div class="list-content" >
+            <div style="padding:8px" ng-repeat="ticket in listToDo" class="ticket">
+                <pane class="ticket-title" ng-model="ticket">
+                    <div>
+                    <span><strong>Responsável: </strong> {{ticket.name}}</span>
+                </div>  
+                <div>
+                    <span><strong>E-mail: </strong>{{ticket.email}}</span>
+                </div>
+                <div>
+                    <span><strong>Descrição: </strong>{{ticket.title}}</span>
+                </div>
+                <div style="padding-left: 80%;">
+                    <button class="button-concluir" ng-click="concluirTask(ticket)"> V </button>
+                    <button class="button-excluir" ng-click="excluirTarefa(ticket);"> X </button>
+                </div>
+                </pane>
+            </div>
+
+        </div>
+        <button class="add-task" ng-click="addRandomTask()">
+            Estou sem tarefas
+        </button>
+        <button class="add-ticket" ng-click="addTicket(list)">
+            Adicionar Tarefa
+        </button>
+    </div>
+    <div class="list">
+        <span class="list-name" ng-model="nameList"> CONCLUÍDOS </span>
+        <div class="list-content">
+            <div style="padding:8px" ng-repeat="ticket in listConcluido" class="ticket">
+                <pane class="ticket-title" ng-model="ticket">
+                    <div>
+                    <span><strong>Responsável: </strong> {{ticket.name}}</span>
+                </div>  
+                <div>
+                    <span><strong>E-mail: </strong>{{ticket.email}}</span>
+                </div>
+                <div>
+                    <span><strong>Descrição: </strong>{{ticket.title}}</span>
+                </div>
+                <div style="padding-left: 70%;">
+                    <button class="button-concluir" ng-click="restaurarTarefa(ticket)">Restaurar</button>
+                </div>
+                </pane>
+            </div>
+        </div>
+    <div class="modal" id="todo_form" ng-if="modal == true">
+        <div class="header">
+          <div class="title">Adicionar Tarefa</div>
+          <button class="btn close-modal" ng-click="closeModal()">&times;</button>
+        </div>
+        <div class="body" >
+            <div style="padding:10px">
+                <label>Nome do responsável: <input type="text" ng-model="task.name" /></label>
+            </div>
+            <div style="padding:10px">
+                <label>E-mail: <input type="text" ng-model="task.email" /></label>
+            </div>
+            <div style="padding:10px">
+                <label>Descrição: <textarea type="textarea" ng-model="task.desc"></textarea></label>
+            </div>
+        </div>
+        <div style="padding-left: 80%">
+            <button class="submit-ticket" ng-click="addTask()">
+                Confirmar
+            </button>
+        </div>
+    </div>
+    <div class="modal" id="todo_form" ng-if="senhaAdmin == true">
+        <div class="header">
+          <div class="title">Senha de Autorização</div>
+          <button class="btn close-modal" ng-click="closeModalAdmin()">&times;</button>
+        </div>
+        <div class="body" >
+            <div style="padding:10px">
+                <label>Senha do Admistrador: <input type="password" ng-model="admin.psw"/></label>
+            </div>
+        </div>
+        <div style="padding-left: 80%">
+            <button class="submit-ticket" ng-click="pswAdmin()">
+                Confirmar
+            </button>
+        </div>
+    </div>
+</div>
+
