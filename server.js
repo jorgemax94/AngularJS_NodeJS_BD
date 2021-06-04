@@ -55,11 +55,8 @@ app.get('/tarefasIncluidas', (req, res) => {
 })
 
 app.post('/tarefas', (req, res, next) => {
-    console.log("DESGRAÇAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-    console.log(req.body.id)
     const tarefa = bancoDeDados.excluirTarefaPendente(
         req.body.id)
-    console.log(tarefa)
     res.send(tarefa) // JSON
 })
 
