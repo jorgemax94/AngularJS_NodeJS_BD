@@ -16,9 +16,9 @@ Web Application desenvolvida em AngularJS.
 
 2) Após o comando acima ter sido executado com sucesso, execute o seguinte comando para rodar a aplicação:
 
-    $ npm run dev
+    $ npm start
     
-3) Este comando sobe o servidor da backend e do frontend.
+3) Este comando sobe o servidor da aplicação.
 
 
 4) Quando a aplicação estiver rodando executar o comando abaixo ou acessar diretamente o endereço **http://localhost:3000** no navegador:
