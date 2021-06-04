@@ -23,6 +23,9 @@ angular.module('demo').controller('BoardPageCtrl', function ($scope,MyService) {
     })
   }
 
+  $scope.atualizarLista();
+  $scope.atualizarListaConcluido();
+
   $scope.finalizarInclusao = function(){
       const task = {title: $scope.task.desc, name: $scope.task.name, email: $scope.task.email, qtdMov: 0};
       service.salvarTarefasToDo(task);
@@ -34,17 +37,15 @@ angular.module('demo').controller('BoardPageCtrl', function ($scope,MyService) {
     service.validarEmail(email).then(function(response){
       const validFormat = response.data.format_valid;
       const mxFound = response.data.mx_found;
-      if(validFormat && validFormat){
+      const youMean = response.data.did_you_mean;
+      if(validFormat && mxFound){
         $scope.finalizarInclusao();
       }else{
-        alert("E-mail informado inválido. Preencha novamente!")
+        alert("E-mail informado inválido.\nVocê quis dizer: " + youMean)
       }
     });
 
   }
-  
-  $scope.atualizarLista();
-  $scope.atualizarListaConcluido();
 
   $scope.concluirTask = function(tarefa){
     service.excluirTarefaPendente(tarefa);
@@ -107,7 +108,6 @@ angular.module('demo').controller('BoardPageCtrl', function ($scope,MyService) {
   }
 
   $scope.addTicket = function (list) {
-    //list.tickets.push({});
     $scope.modal = true;
     $scope.task = {};
   }

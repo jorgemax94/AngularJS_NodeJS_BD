@@ -45,19 +45,19 @@ app.post('/emailVerify', async (req, res) =>{
 app.get('/tarefasConcluidas', (req, res) => {
     res.send(
         bancoDeDados.getTarefasConcluidas()
-    ) // formato JSON
+    )
 })
 
 app.get('/tarefasIncluidas', (req, res) => {
     res.send(
         bancoDeDados.getTarefasPendentes()
-    ) // formato JSON
+    )
 })
 
 app.post('/tarefas', (req, res, next) => {
     const tarefa = bancoDeDados.excluirTarefaPendente(
         req.body.id)
-    res.send(tarefa) // JSON
+    res.send(tarefa)
 })
 
 app.post('/incluirTarefasRandom', (req, res, next) => {
@@ -88,7 +88,7 @@ app.post('/excluirTarefaConcluida', (req, res, next) => {
         email: req.body.email,
         qtdMov: req.body.qtdMov
     })
-    res.send(tarefa) // JSON
+    res.send(tarefa)
 })
 
 app.post('/tarefasPendentes', (req, res) => {
@@ -98,7 +98,7 @@ app.post('/tarefasPendentes', (req, res) => {
         email: req.body.email,
         qtdMov: req.body.qtdMov
     });
-    res.send(produto); // JSON
+    res.send(produto);
 })
 
 app.listen(3000, function () {
