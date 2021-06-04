@@ -1,45 +1,30 @@
+## Visão do projeto
+API desenvolvida em Node para contemplar as operações de CRUD (Create, Read, Update and Delete) e consumo de API externas.
+Web Application desenvolvida em AngularJS.
+
+## Configurando a aplicação
+
+### Requisitos
+
+* Para instalar o Node - clique [aqui](https://nodejs.org/en/download/)
+
+### Executando
+
+1) Dentro da pasta do projeto execute o seguinte comando para instalar as dependências do projeto:
+
+    $ npm install
+
+2) Após o comando acima ter sido executado com sucesso, execute o seguinte comando para rodar a aplicação:
+
+    $ npm run dev
+    
+3) Este comando sobe o servidor da backend e do frontend.
 
 
-Easy Nodejs Setup
-===============
+4) Quando a aplicação estiver rodando executar o comando abaixo ou acessar diretamente o endereço **http://localhost:3000** no navegador:
 
-
-This project is a simple setup I want to have for other projects. 
-
-It contains the following: 
-
- - frontend with live-reload and access to backend
- - styling with sass. also reloaded automatically
- - support for font-awesome and POC on images - including style references to images
- - auto-reload for backend with nodemon
- - js-standard linter
- - testing for both with mocha for backend and karma+jasmine for frontend
- - a build that packs minimized version of the project to tar.gz.
- - coverage reports for tests in frontend & backend
-
-# How to use
-
- - `npm test` - runs linter, frontend tests with coverage, backend tests with coverage   
-                write backend tests under `tests/backend` with suffix `.spec.js`   
-                write frontend tests under `tests/frontend` with suffix `.spec.js`
- - `npm run build` - annotates angular, minifies code and packs npm in dist folder
- - `npm start` - runs the project in development environment
- - `npm server:dist` - will run the project just like it would in production.
-
-# Using --silent on npm run commands
-
-In some commands it is recommended to use `--silent`.   
-For example, running `npm test` might result in error.   
-npm has an annoying error print if it exists in none 0 exit code. [read more](https://github.com/npm/npm/issues/6124)   
-   
-A simple solution is to run `npm test --silent`
-
-# Using no-color
-
-Sometimes it is also recommended to use `npm config set color false`   
-Note, this will not always apply to the output coming from a script. 
-
-For example, if log4js is used, it will print with color
-
-
-
+    $ "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" -new "127.0.0.1:3000"
+    
+ ### Utilização
+ 
+ Trata-se de uma aplicação feita como um TO DO list, sendo possível incluir e excluir tarefas a fazer e conclui-las.
