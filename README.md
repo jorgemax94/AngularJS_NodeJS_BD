@@ -1,5 +1,5 @@
 ## Visão do projeto
-API desenvolvida em Node para contemplar as operações de CRUD (Create, Read, Update and Delete) e consumo de API externas.
+API desenvolvida em Node para contemplar as operações de CRUD , simulando gravação em BD e consumo de API externas.
 Web Application desenvolvida em AngularJS.
 
 ## Configurando a aplicação
